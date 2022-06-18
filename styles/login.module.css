@@ -1,0 +1,23 @@
+.shape {
+  position: absolute;
+  overflow: hidden;
+  width: 100vw;
+  height: 60vh;
+  top: 0;
+}
+.box {
+  position: absolute;
+  width: 100vw;
+  height: 60vh;
+  top: 0;
+  border-radius: 0 0 0 0;
+  background-color: #1b4d89;
+}
+.circle {
+  position: absolute;
+  width: 110vw;
+  height: 30vh;
+  bottom: 0;
+  border-radius: 0 100% 0 0;
+  background-color: white;
+}

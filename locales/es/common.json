@@ -1,0 +1,16 @@
+{
+  "signIn": "Iniciar Sesión",
+  "signUp": "Registrarse",
+  "email": "Correo Electronico",
+  "password": "Contraseña",
+  "forgotPassword": "Olvidó su contraseña?",
+  "or": "o",
+  "continueWithGoogle": "Continuar con Google",
+  "noAccount": "No tiene una cuenta?",
+  "alreadyRegistered": "Ya tiene una cuenta?",
+  "firstName": "Nombre",
+  "lastName": "Apellido",
+  "confirmPassword": "Confirmar Contraseña",
+  "login": "Iniciar Sesión",
+  "register": "Registrarse"
+}
