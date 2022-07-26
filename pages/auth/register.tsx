@@ -29,6 +29,7 @@ const SignUp = () => {
               height={'200'}
               width={'200'}
               objectFit={'contain'}
+              alt="google_logo"
             />
           </div>
         </div>
@@ -127,6 +128,7 @@ const SignUp = () => {
                       height={'24'}
                       width={'24'}
                       objectFit={'contain'}
+                      alt="google_logo"
                     />
                     <p className='ml-4'>{t('continueWithGoogle')}</p>
                   </a>

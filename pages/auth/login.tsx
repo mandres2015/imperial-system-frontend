@@ -5,8 +5,6 @@ import ButtonRounded from '../../components/button-rounded'
 import TextFieldRounded from '../../components/textfield_rounded'
 import style from '../../styles/login.module.css'
 import gogoleLogo from '../../public/images/google_logo.png'
-import routes from '../../core/routes'
-import Link from 'next/link'
 
 const SignIn = () => {
   const { t } = useTranslation('common')
@@ -18,17 +16,16 @@ const SignIn = () => {
       </div>
       <div className='md:flex md:flex-1 min-h-screen hidden justify-center'>
         <div className='block self-center text-white'>
-          <p className='text-2xl self-center'>En</p>
-          <h1 className='text-6xl self-center'>DETODO</h1>
-          <p className='text-2xl self-center'>
-            encuentra todo lo que necesitas
-          </p>
+          <p className='text-2xl self-center'>Bienvenido a</p>
+          <h1 className='text-6xl self-center'>CYBER MARKET ALEXIS</h1>
+          <p className='text-2xl self-center'>Inicia sesion para empezar</p>
           <div className='flex justify-center my-16'>
             <Image
               src={gogoleLogo}
               height={'200'}
               width={'200'}
               objectFit={'contain'}
+              alt='logo'
             />
           </div>
         </div>
@@ -89,20 +86,13 @@ const SignIn = () => {
                       height={'24'}
                       width={'24'}
                       objectFit={'contain'}
+                      alt='logo'
                     />
                     <p className='ml-4'>{t('continueWithGoogle')}</p>
                   </a>
                 </div>
               </Form>
             </Formik>
-          </div>
-          <div className='flex mt-8 justify-center text-black md:text-white'>
-            <p className='mr-3 self-end'>{t('noAccount')}</p>
-            <Link href={routes.register}>
-              <p className='font-bold text-xl p-0 cursor-pointer'>
-                {t('register')}
-              </p>
-            </Link>
           </div>
         </div>
       </div>
