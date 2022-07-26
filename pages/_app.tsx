@@ -1,16 +1,16 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
-import { wrapper, store } from '../redux/store'
-import { Provider } from 'react-redux'
+import type { AppProps } from 'next/app';
+import '../styles/globals.css';
+import { NextPageWithLayout } from './page';
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return (
-    <>
-      <Provider store={store}>
-        <Component {...pageProps} />
-      </Provider>
-    </>
-  )
+interface AppPropsWithLayout extends AppProps {
+  Component: NextPageWithLayout;
 }
 
-export default wrapper.withRedux(MyApp)
+function MyApp({ Component, pageProps }: AppPropsWithLayout) {
+  // Use the layout defined at the page level, if available
+  const getLayout = Component.getLayout || ((page) => page);
+
+  return getLayout(<Component {...pageProps} />);
+}
+
+export default MyApp;

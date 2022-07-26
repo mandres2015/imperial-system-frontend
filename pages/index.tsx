@@ -1,45 +1,27 @@
-import { useState } from 'react'
-import { connect } from 'react-redux'
-import { setInfo } from '../redux/actions/main'
+import CatCard from '../components/cards/cat/CatCard'
+import { mockCatCardProps } from '../components/cards/cat/CatCard.mocks'
+import PrimaryLayout from '../components/layouts/primary/PrimaryLayout'
+import SidebarLayout from '../components/layouts/sidebar/SidebarLayout'
+import { NextPageWithLayout } from './page'
 
-function Home(props: { name: any; setInfo: any }) {
-  const { name, setInfo } = props
-  const [newName, setName] = useState('')
-
+const Home: NextPageWithLayout = () => {
   return (
-    <div className='w-full container'>
-      <p className=''>Enter a Name {name}:</p>
-      <form
-        typeof='submit'
-        className='inline-block mr-2'
-        onSubmit={e => {
-          e.preventDefault()
-          setInfo(newName)
-        }}
-      >
-        <input
-          type='text'
-          value={newName}
-          onChange={e => setName(e.target.value)}
-          className='border rounded p-2'
-        ></input>
-      </form>
-      <button
-        className='rounded-md px-4 py-2 bg-blue-600 text-white active:bg-yellow-300 focus:bg-yellow-300 focus:outline-none'
-        onClick={() => setInfo(newName)}
-      >
-        Submit
-      </button>
-    </div>
+    <section>
+      <h1>
+        Welcome to <a href='https://nextjs.org'>Next.js!</a>
+      </h1>
+      <CatCard {...mockCatCardProps.base} />
+    </section>
   )
 }
 
-const mapStateToProps = (state: { main: { name: any } }) => {
-  return { name: state.main.name }
-}
+export default Home
 
-const mapDispatchToProps = {
-  setInfo,
+Home.getLayout = page => {
+  return (
+    <PrimaryLayout>
+      <SidebarLayout />
+      {page}
+    </PrimaryLayout>
+  )
 }
-
-export default connect(mapStateToProps, mapDispatchToProps)(Home)
